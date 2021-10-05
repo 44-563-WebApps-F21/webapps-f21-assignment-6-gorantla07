@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arithmetic</title>
+    </head>
+ 
+<body>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="eb">Enter a Base</label>
+    <input type ="number" id="eb" name="eb" value=10> <br>
+
+    <label for="exform1_nick">Enter an Exponent</label>
+    <input type ="text" id="ex" name="ex" value="2"> <br>
+
+    <input type="button" onclick="powers()" value="Compute">
+
+    <p id="r1">Results</p>
+</form>
+
+
+
+
+<script> 
+
+function powers()
+{
+    result=""
+    E_B=document.getElementById("eb").value
+    E_X=document.getElementById("ex").value
+    RES=document.getElementById("r1")
+    for(i=1;i<=E_X;i++)
+    {
+        
+        result=result+Math.pow(E_B,i)+" ";
+    }
+    RES.innerHTML=result;
+
+}
+</script>
+
+</body>
+</html> 
