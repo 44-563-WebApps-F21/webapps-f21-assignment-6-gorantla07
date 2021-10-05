@@ -16,12 +16,18 @@
         <input type="button" onclick="processPhrase()" value="Check the Phrase">
 
         
-    </form>
+    </form>   
     <p id="result">Posting as a result</p>
+
+    <div>
+        <img src="giraffe.jpg" alt="Giraffe Image" width="200" height="200" onclick="newImage()" id="i1">
+    </div>
 
     <script>
         correct=0
         wrong=0
+        usingImage=1
+
         function processPhrase()
         {
             S_P=document.getElementById("spi").value
@@ -40,6 +46,26 @@
 
             out.innerHTML="Correct: "+correct+" "+"Wrong: "+wrong;
             
+        }
+
+        function newImage()
+        {
+            switch(usingImage)
+            {
+                case 1:
+                    document.getElementById("i1").src="giraffe.jpg";
+                    usingImage=usingImage+1
+                    break
+                case 2:
+                    document.getElementById("i1").src="ox.jpg";
+                    usingImage=usingImage+1
+                    break;
+                case 3:
+                    document.getElementById("i1").src="antelope.jpg"
+                    usingImage=1;
+                    break;
+
+            }
         }
     </script>
 </body>
