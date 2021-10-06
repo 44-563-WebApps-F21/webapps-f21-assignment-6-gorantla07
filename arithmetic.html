@@ -18,9 +18,28 @@
     <input type="button" onclick="powers()" value="Compute">
 
     <p id="r1">Results</p>
+
+    
+    
+
+    
 </form>
 
-
+<div onclick="processRadio()">
+    
+    <input type="radio" value="plus" id="plus" name="operation" />
+    <label>+</label><br>
+    
+    <input type="radio" value="minus" id="minus" name="operation"/>
+    <label>-</label><br>
+    
+    <input type="radio" value="times" id="times" name="operation" />
+    <label>*</label><br>
+    
+    <input type="radio" value="divide" id="divide" name="operation" />
+    <label>/</label><br>
+    <p id="r2">Output</p>
+</div>
 
 
 <script> 
@@ -38,6 +57,31 @@ function powers()
     }
     RES.innerHTML=result;
 
+}
+
+
+function processRadio()
+{
+    EB1=document.getElementById("eb").value
+    EX1=document.getElementById("ex").value
+    out=document.getElementById("r2")
+    if(document.getElementById('plus').checked)
+    {
+        out.innerHTML=Number(EB1)+Number(EX1)
+        
+    }
+    if(document.getElementById('minus').checked)
+    {
+        out.innerHTML=EB1-EX1
+    }
+    if(document.getElementById('times').checked)
+    {
+        out.innerHTML=EB1*EX1
+    }
+    if(document.getElementById('divide').checked)
+    {
+        out.innerHTML=EB1/EX1
+    }
 }
 </script>
 
